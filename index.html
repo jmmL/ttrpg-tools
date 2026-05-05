@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mothership Bounty Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="green" data-glitch="0" data-dirt="0">
+    <main class="screen-shell">
+      <header class="board-header">
+        <div class="logo">TF</div>
+        <div>
+          <h1>Available Jobs</h1>
+          <p class="subline">Dream Network // Terminal 07</p>
+        </div>
+        <div class="clock-block">
+          <div id="clockTime">--:--:--</div>
+          <div id="clockDate">--/--/--</div>
+        </div>
+      </header>
+
+      <section id="jobList" class="job-list" aria-live="polite"></section>
+
+      <footer class="footer-line">
+        <span>Use [Up/Down] to scroll</span>
+        <span>Enter = View details</span>
+      </footer>
+    </main>
+
+    <aside class="control-panel" id="controls">
+      <h2>GM Controls</h2>
+
+      <label>Theme
+        <select id="themeSelect">
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="red">Red</option>
+        </select>
+      </label>
+
+      <label>
+        Broken screen
+        <input type="checkbox" id="glitchToggle" />
+      </label>
+      <label>
+        Glitch intensity
+        <input type="range" id="glitchIntensity" min="0" max="100" value="25" />
+      </label>
+
+      <label>
+        Dirt / wear
+        <input type="checkbox" id="dirtToggle" />
+      </label>
+      <label>
+        Dirt intensity
+        <input type="range" id="dirtIntensity" min="0" max="100" value="30" />
+      </label>
+
+      <label>
+        Auto-scroll
+        <input type="checkbox" id="autoscrollToggle" />
+      </label>
+      <label>
+        Speed
+        <input type="range" id="autoscrollSpeed" min="1" max="8" value="3" />
+      </label>
+
+      <label>
+        Font scale
+        <input type="range" id="fontScale" min="80" max="130" value="100" />
+      </label>
+
+      <label>
+        Paste jobs (text or markdown)
+        <textarea id="jobInput" rows="12"></textarea>
+      </label>
+
+      <div class="button-row">
+        <button id="applyTextBtn">Apply Text</button>
+        <button id="loadDefaultBtn">Load Sample</button>
+      </div>
+
+      <label>
+        Import markdown file
+        <input id="fileInput" type="file" accept=".md,.txt,text/markdown,text/plain" />
+      </label>
+
+      <label class="inline-control">
+        Player lock mode
+        <input type="checkbox" id="lockToggle" />
+      </label>
+
+      <p class="hint">Press <strong>G</strong> to hide/show this panel.</p>
+    </aside>
+
+    <div class="overlay crt"></div>
+    <div class="overlay wear"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
